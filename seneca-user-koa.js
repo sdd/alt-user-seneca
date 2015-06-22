@@ -13,11 +13,13 @@ module.exports = function(seneca) {
             });
 
             if (response.success) {
-                return this.body = response;
+                this.body = response;
+            } else {
+	            this.status = 500;
             }
+        } else {
+	        this.status = 401;
         }
-
-        this.status = 500;
     });
 
     return router.middleware();
