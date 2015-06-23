@@ -2,7 +2,7 @@
   "name": "alt-user-seneca",
   "version": "1.0.0",
   "description": "Alternative to seneca-user. Heavily WIP",
-  "main": "seneca-user-koa.js",
+  "main": "seneca-user.js",
   "directories": {
     "test": "test"
   },
