@@ -17,7 +17,9 @@ var Login = thinky.createModel('Login', {
 	userId     : type.string(),
 	accountId  : type.string(),
 	provider   : type.string(),
-	identifier : type.string()
+	identifier : type.string(),
+	token      : type.string(),
+	secret     : type.string()
 });
 
 Login.ensureIndex('identifier');
@@ -51,6 +53,9 @@ module.exports = function(config, seneca_instance) {
                 var login = new Login(args.query.user.userdata);
                 var user = new User({ name: args.query.user.name });
                 login.user = user;
+				if (_.isArray(args.query.user.credentials)) {
+					_.extend(login, args.query.user.credentials);
+				}
 
                 return login.saveAll()
                     // store the created userId
