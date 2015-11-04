@@ -10,7 +10,7 @@ var request = require('supertest'),
 
 chai.use(require("sinon-chai"));
 
-var senecaUserKoa = require('../index');
+var senecaUserKoa = require('../seneca-user-koa');
 
 describe('seneca-user-koa', function() {
 

@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "iojs --harmony_arrow_functions node_modules/mocha/bin/_mocha --recursive --ui bdd ./test"
+    "test": "node node_modules/mocha/bin/_mocha --recursive --ui bdd ./test"
   },
   "keywords": [
     "seneca",
